@@ -21,7 +21,7 @@
                 <h1>BMI測量</h1>
             </div>
             <div class="row justify-content-center">
-                <p>計算公式: BMI=體重(kg)/身高^2(cm^2)</p>
+                <p>計算公式: BMI=體重(kg)/身高^2(m^2)</p>
             </div>
 
             <div class="row justify-content-around">
@@ -35,70 +35,73 @@
                 <div class="card bg-secondary text-white" style="width: 18rem">
                     <div class="card-head">
                         <div class="text-center">
-                            18.5&le;BMI&lt;24
+                            18.5&le;BMI&lt;24 正常範圍
                         </div>
                     </div>
                 </div>
                 <div class="card bg-secondary text-white" style="width: 18rem">
                     <div class="card-head">
                         <div class="text-center">
-                            24&le;BMI&lt;27
+                            24&le;BMI&lt;27 過重
                         </div>
                     </div>
                 </div>
                 <div class="card bg-secondary text-white" style="width: 18rem">
                     <div class="card-head">
                         <div class="text-center">
-                            27&le;BMI&lt;30
+                            27&le;BMI&lt;30 輕度肥胖
                         </div>
                     </div>
                 </div>
                 <div class="card bg-secondary text-white" style="width: 18rem">
                     <div class="card-head">
                         <div class="text-center">
-                            30&le;BMI&lt;35
+                            30&le;BMI&lt;35 中度肥胖
                         </div>
                     </div>
                 </div>
                 <div class="card bg-secondary text-white" style="width: 18rem">
                     <div class="card-head">
                         <div class="text-center">
-                            35&le;BMI
+                            35&le;BMI 重度肥胖
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="alert alert-success">
-                您的結果為:
+            <div id="result-p" style="display: none;">
+                <div id="result" class="alert alert-success"></div>
             </div>
+
         </div>
     </div>
 
     <div class="contains">
         <div class="row justify-content-center">
             <div class="card" style="width: 18rem">
- 
+
                 <div class="card-body">
 
                     <form>
                         <div class="form-group">
                             <label>體重</label>
-                            <input type="text" id="weight" class="form-control" placeholder="kg">
+                            <input type="text" id="weight" class="form-control" placeholder="kg"  oninput="value = value.replace(/[^\d]/g,'')">
                         </div>
                         <div class="form-group">
                             <label>身高</label>
-                            <input type="text" id="height" class="form-control" placeholder="cm">
+                            <input type="text" id="height" class="form-control" placeholder="cm"  oninput="value = value.replace(/[^\d]/g,'')">
                         </div>
-                        <button type="submit" class="btn btn-primary">送出</button>
-                        <button type="reset" class="btn btn-secondary">清除</button>
+
                     </form>
+                    <button id="submit" class="btn btn-primary">送出</button>
+                    <button id="reset" class="btn btn-secondary">清除</button>
                 </div>
             </div>
         </div>
 
     </div>
 
+    <script src="js/main.js"></script>
 </body>
 
 </html>
